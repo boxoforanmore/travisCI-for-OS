@@ -27,8 +27,6 @@ void handler(int sigNum) {
     else {
         assertsyscall(printf("Unexpected signal received\n"), <= 0);
     }  
-    //assertsyscall(printf("Sending a signal"), <= 0); 
-    //fflush(stdout);
 } 
 
 
@@ -58,9 +56,6 @@ int main() {
 
     pid_t childPID = fork();
 
-//add handler to child and have three sig calls from child
-//add pause in parent on else below
-//structs should also be in action
 
     if (childPID < 0) {
         perror("Fork failed");
@@ -72,32 +67,12 @@ int main() {
     }
     else {
         // You are the "Vader" (Familias)
-
         assertsyscall(printf("Parent PID: %d\n", myPID), <= 0);
         assertsyscall(printf("Child PID: %d\n\n", childPID), <= 0);
         fflush(stdout);
 
         int status;
 	assertsyscall(wait(&status), < 0);
-        //assertsyscall(wait(&action1), != 0);
-        //assert(sigsuspend(action1) == -1);
-        //assertsyscall(wait(action2), != 0);
-        //sleep(1);
-        //assert(sigaction(SIGUSR2, &action2, NULL) == 0);
-        //assertsyscall(sigsuspend(action2), == -1);
-        //assertsyscall(wait(action3), != 0);
-        //sleep(1);
-        //assert(sigaction(SIGHUP, &action3, NULL) == 0);
-        //assertsyscall(sigsuspend(action3), == -1);
-        //assertsyscall(wait(action1), != 0);
-        //sleep(1);
-        //assert(sigaction(SIGUSR1, &action1, NULL) == 0);
-        //assertsyscall(sigsuspend(action1), == -1);
-        //assertsyscall(pause(), == -1);
-        //assertsyscall(pause(), == -1);
-        //assertsyscall(pause(), == -1);
-        //assertsyscall(pause(), == -1);
-
 
         if(WIFEXITED(status)){
             assertsyscall(printf("Process %d exited with status: %d\n", childPID, WEXITSTATUS(status)), <= 0);						
