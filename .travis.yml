@@ -1,7 +1,5 @@
-language: cpp
+language: c
 sudo: required
 compiler:
 - gcc
-os:
-- linux
 script: ./travis.sh
