@@ -1,12 +1,9 @@
-before_install:
+install:
 - sudo apt-get update
 - sudo apt-get upgrade
 - sudo apt-get install clang-tidy
-
 language: cpp
-
 compiler: gcc
-
 script:
 - gcc -Wall -o main main.cc
 - gcc -Wall -o child child.cc
