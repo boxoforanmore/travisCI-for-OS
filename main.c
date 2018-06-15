@@ -78,4 +78,5 @@ int main() {
             assertsyscall(printf("Process %d exited with status: %d\n", childPID, WEXITSTATUS(status)), <= 0);						
         }
     }
+    return 0;
 }

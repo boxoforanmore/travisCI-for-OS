@@ -23,4 +23,5 @@ int main(int argc, char *argv[]) {
     assert(kill(parent, SIGUSR1) == 0);
     assert(kill(parent, SIGUSR1) == 0);
 
+    return 0;
 }
