@@ -1,5 +1,7 @@
 language: cpp
-script:
-- gcc -Wall -o main ./main.cc
-- gcc -Wall -o child ./child.cc
--./main
+sudo: required
+compiler:
+- gcc
+os:
+- linux
+script: ./travis.sh
