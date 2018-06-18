@@ -1,5 +1,4 @@
 #/bin/bash
-echo "Installing clang-tidy" `sudo apt-get install clang-tidy`
 echo
 echo
 echo "Running: gcc -o child child.c -Wall"  `gcc -o child child.c -Wall`
