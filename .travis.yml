@@ -1,6 +1,6 @@
 language: c
 sudo: required
-install:
+before_install:
 - sudo apt-get install clang-tidy
 - sudo apt-get install valgrind
 compiler:
